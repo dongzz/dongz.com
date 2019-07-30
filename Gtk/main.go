@@ -28,6 +28,10 @@ func (obj *Chessboard) CreateWindow() {
 	builder := gtk.NewBuilder()
 	builder.AddFromFile("/home/dongzhi/go/src/dongz.com/Gtk/chess.glade")
 
+	//func NewWindowFromObject(obj *glib.GObject) *Window{
+	//	return &Window{Bin{Container{Widget{C.toGWidget(obj.Object)}}}}
+	//}
+
 	obj.window = gtk.NewWindowFromObject(builder.GetObject("window1"))
 	obj.window.SetAppPaintable(true) //允许绘图
 	obj.window.SetPosition(gtk.WIN_POS_CENTER)
@@ -72,4 +76,5 @@ func main() {
 	obj.window.ShowAll()
 
 	gtk.Main()
+
 }
