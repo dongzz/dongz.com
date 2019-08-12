@@ -45,7 +45,7 @@ func readPkgMsg(conn net.Conn) (msg message.Message, err error) {
 	return
 }
 
-//处理登录请求
+//处理登录请求k
 func serverProcessLogin(conn net.Conn, msg *message.Message) (err error) {
 	//1. 先从msg中取出 data，再反序列化成 loginMsg
 	var loginMsg message.LoginMsg
