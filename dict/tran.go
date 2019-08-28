@@ -40,6 +40,6 @@ func main() {
 	command := exec.Command("zenity", "--notification", "--window-icon=\"info\"", "--text="+result)
 	command.Run()
 
-	cleanClip := exec.Command("/home/dongzhi/./cleanClip.sh")
+	cleanClip := exec.Command("~/./cleanClip.sh")
 	cleanClip.Run()
 }
