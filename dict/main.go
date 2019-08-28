@@ -20,7 +20,7 @@ func main() {
 	if stderr.Len() == 0 {
 		word = stdout.String()
 	}
-
+sudo pacman -S festival
 	if word == "" {
 		return
 	}

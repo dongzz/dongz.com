@@ -3,7 +3,6 @@ package main
 import (
 	"bytes"
 	"os/exec"
-	"strings"
 )
 
 func main() {
@@ -25,19 +24,14 @@ func main() {
 		return
 	}
 
-	//[2K[1G
-	trans := exec.Command("dict", word)
+	trans := exec.Command("fy", word)
 	trans.Stdout = &resout
 	trans.Stderr = &reserr
 	trans.Run()
 
 	result := ""
-	if reserr.Len() == 0 {
+	if reserr.Len() == 3 && reserr.String() == "- \n" {
 		result = resout.String()
-		result = strings.Replace(result, "\x1b[2K", "", -1)
-		result = strings.Replace(result, "\x1b[1G", "", -1)
-		result = strings.Replace(result, "\n", "", -1)
-		result = strings.TrimLeft(result, " ")
 	}
 
 	if result == "" {
